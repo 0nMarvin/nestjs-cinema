@@ -1,5 +1,6 @@
-{"title":"A banana 4","description":"Uma banana 2 que se formou em artes","launchdate":"2023-10-11","showtimes":"2023-10-10","_id":"rYC0RAs9yIofwdgh"}
-{"title":"A banana 4","description":"Uma banana 2 que se formou em artes","launchdate":"2023-10-11","showtimes":"2023-10-10","_id":"pNV3iTz1jzSNkZYK"}
-{"$$deleted":true,"_id":"pNV3iTz1jzSNkZYK"}
-{"title":"A banana 4","description":"Uma banana 2 que se formou em artes","launchdate":"2023-10-11","showtimes":"2023-10-10","_id":"m4nC1vENI36l9H5U"}
+{"title":"The Enchanted Avocado","description":"An avocado with magical properties that influence creativity.","launchdate":"2025-01-10T12:00:00.000Z","showtimes":[{"showtime1":"2024-12-01T15:00:00.000Z","showtime2":"2024-12-01T18:00:00.000Z","showtime3":"2024-12-02T11:00:00.000Z"}],"_id":"8Q5qzvZqI3ssI0oK"}
+{"title":" ","description":" ","launchdate":" ","showtimes":[" "],"_id":"BovUFPLeUjp4yGl3"}
+{"title":" ","description":" ","launchdate":" ","showtimes":[" "],"_id":"TbgspCuMwsHOO8Au"}
+{"title":"The Mysterious Mango","description":"A mango that holds secrets of an ancient art.","launchdate":"2024-12-01T14:30:00.000Z","showtimes":["2024-12-01T15:00:00.000Z","2024-12-01T18:00:00.000Z","2024-12-02T11:00:00.000Z"],"_id":"gcFbmTGx6gR6hny3"}
 {"title":"A outra banana","description":"Uma outra banana que se formou em artes","launchdate":"2023-10-11","showtimes":"2023-10-10","_id":"m4nC1vENI36l9H5U"}
+{"title":"A banana 4","description":"Uma banana 2 que se formou em artes","launchdate":"2023-10-11","showtimes":"2023-10-10","_id":"rYC0RAs9yIofwdgh"}
