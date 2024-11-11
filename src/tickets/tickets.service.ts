@@ -26,30 +26,30 @@ export class TicketsService {
 
   async findOne(id: string): Promise<Ticket> {
     return new Promise((resolve, reject) => {
-      this.dbService.getTicketDatastore().findOne({ id }, (err, doc) => {
+      this.dbService.getTicketDatastore().findOne({ _id: id }, (err, doc) => {
         if (err) reject(err);
-        if (!doc) throw new NotFoundException(`Ticket with ID ${id} not found.`);
-        resolve(doc);
+        else if (!doc) reject(new NotFoundException('Ticket not found'));
+        else resolve(doc);
+      });
+    });
+  }
+  
+  update(id: string, ticket: Partial<Ticket>): Promise<Ticket> {
+    return new Promise((resolve, reject) => {
+      this.dbService.getTicketDatastore().update({ _id: id }, { $set: ticket }, {}, (err, numReplaced) => {
+        if (err) reject(err);
+        else if (numReplaced === 0) reject(new NotFoundException('Ticket not found or not updated'));
+        else this.findOne(id).then(resolve).catch(reject);
       });
     });
   }
 
-  async update(id: string, ticket: Ticket): Promise<Ticket> {
+  remove(id: string): Promise<void> {
     return new Promise((resolve, reject) => {
-      this.dbService.getTicketDatastore().update({ id }, ticket, {}, (err, numReplaced) => {
+      this.dbService.getTicketDatastore().remove({ _id: id }, {}, (err, numRemoved) => {
         if (err) reject(err);
-        if (numReplaced === 0) throw new NotFoundException(`Ticket with ID ${id} not found.`);
-        resolve(ticket);
-      });
-    });
-  }
-
-  async remove(id: string): Promise<void> {
-    return new Promise((resolve, reject) => {
-      this.dbService.getTicketDatastore().remove({ id }, {}, (err, numRemoved) => {
-        if (err) reject(err);
-        if (numRemoved === 0) throw new NotFoundException(`Ticket with ID ${id} not found.`);
-        resolve();
+        else if (numRemoved === 0) reject(new NotFoundException(`Ticket with ID ${id} not found.`));
+        else resolve();
       });
     });
   }
